@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class Point implements Comparable<Point>{
 
@@ -34,10 +35,7 @@ public class Point implements Comparable<Point>{
 
         Point point = (Point) o;
 
-        if (x != point.x) {
-            return false;
-        }
-        return y == point.y;
+        return Objects.equals(x, point.x) && Objects.equals(y, point.y);
     }
 
     @Override
@@ -56,7 +54,7 @@ public class Point implements Comparable<Point>{
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
     public static List<Point> sort(List<Point> points) {
         Collections.sort(points);
-        return points;      //这里不太理解，为什么x和y使用Integer的时候返回的不是同一个对象，而使用int的时候返回的就是同一个对象...
+        return points;
     }
     /*
         @Override
