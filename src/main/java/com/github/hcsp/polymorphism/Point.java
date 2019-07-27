@@ -53,7 +53,25 @@ public class Point {
 
     // 按照先x再y，从小到大的顺序排序
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
-    public static List<Point> sort(List<Point> points) {}
+    public static List<Point> sort(List<Point> points) {
+        Collections.sort(points);
+        return points;
+    }
+    
+    @Override
+    public int compareTo(Point point) {
+        if (x > point.getX()){
+            return 1;
+        }else if(x < point.getX()){
+            return -1;
+        }
+        if (y > point.getY()){
+            return 1;
+        }else if (y < point.getY()){
+            return -1;
+        }
+        return 0;
+    }
 
     public static void main(String[] args) throws IOException {
         List<Point> points =
