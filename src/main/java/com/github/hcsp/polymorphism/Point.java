@@ -3,6 +3,7 @@ package com.github.hcsp.polymorphism;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collections;
 
 public class Point {
 
