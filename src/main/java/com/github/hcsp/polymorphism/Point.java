@@ -2,10 +2,10 @@ package com.github.hcsp.polymorphism;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
-public class Point {
+public class Point implements Comparable<Point>{
 
     private final int x;
     private final int y;
@@ -58,7 +58,18 @@ public class Point {
         Collections.sort(points);
         return points;
     }
-    
+
+    public static void main(String[] args) throws IOException {
+        List<Point> points =
+                Arrays.asList(
+                        new Point(2, 0),
+                        new Point(-1, 1),
+                        new Point(1, -1),
+                        new Point(2, 1),
+                        new Point(2, -1));
+        System.out.println(Point.sort(points));
+    }
+
     @Override
     public int compareTo(Point point) {
         if (x > point.getX()){
@@ -72,16 +83,5 @@ public class Point {
             return -1;
         }
         return 0;
-    }
-
-    public static void main(String[] args) throws IOException {
-        List<Point> points =
-                Arrays.asList(
-                        new Point(2, 0),
-                        new Point(-1, 1),
-                        new Point(1, -1),
-                        new Point(2, 1),
-                        new Point(2, -1));
-        System.out.println(Point.sort(points));
     }
 }
