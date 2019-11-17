@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author wheelchen
@@ -84,13 +85,21 @@ public class Point {
 
     // 按照先x再y，从小到大的顺序排序
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
-    public static List<Point> sort(List<Point> points) {
+    public static List<Point> sort2(List<Point> points) {
         points.sort(new SortByY());
         points.sort(new SortByX());
         return points;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static List<Point> sort(List<Point> points) {
+        return points.stream()
+                .sorted(Comparator.comparing(Point::getY))
+                .sorted(Comparator.comparing(Point::getX))
+                .collect(Collectors.toList());
+    }
+
+
+        public static void main(String[] args) throws IOException {
         List<Point> points =
                 Arrays.asList(
                         new Point(2, 0),
