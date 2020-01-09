@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Point implements Comparable{
+public class Point implements Comparable<Point>{
 
     private final int x;
     private final int y;
@@ -86,8 +86,5 @@ public class Point implements Comparable{
         return 0;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
+
 }
