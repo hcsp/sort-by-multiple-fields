@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Point {
+public class Point implements  Comparable<Point>{
 
     private final int x;
     private final int y;
@@ -84,6 +84,4 @@ public class Point {
         }
         return 0;
     }
-
-
 }
