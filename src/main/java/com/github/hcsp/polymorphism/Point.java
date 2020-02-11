@@ -1,9 +1,10 @@
 package com.github.hcsp.polymorphism;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
-public class Point implements Comparable<Point> {
+public class Point {
 
     private final int x;
     private final int y;
@@ -52,12 +53,7 @@ public class Point implements Comparable<Point> {
 
     // 按照先x再y，从小到大的顺序排序
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
-    //自然排序  a<b -1 a>b 1 a=b 0
-    public static List<Point> sort(List<Point> points) {
-        Collections.sort(points);
-        return points;
-
-    }
+    public static List<Point> sort(List<Point> points) {}
 
     public static void main(String[] args) throws IOException {
         List<Point> points =
@@ -68,25 +64,5 @@ public class Point implements Comparable<Point> {
                         new Point(2, 1),
                         new Point(2, -1));
         System.out.println(Point.sort(points));
-    }
-
-
-
-
-    @Override
-    public int compareTo(Point that) {
-        System.out.println("thisx:"+this.x);
-        System.out.println("thatx:"+that.x);
-        if(this.x<that.x){   //this.x?   that.x?
-            return -1;
-        }else if(this.x>that.x){
-            return 1;
-        }
-        if(this.y<that.y){
-            return -1;
-        }else if(this.y>that.y){
-            return 1;
-        }
-        return  0;
     }
 }
