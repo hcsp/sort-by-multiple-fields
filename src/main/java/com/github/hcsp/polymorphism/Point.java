@@ -3,9 +3,8 @@ package com.github.hcsp.polymorphism;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Collections;
 
-public class Point implements Comparable<Point> {
+public class Point {
 
     private final int x;
     private final int y;
@@ -52,29 +51,18 @@ public class Point implements Comparable<Point> {
         return String.format("(%d,%d)", x, y);
     }
 
-    @Override
-    public int compareTo(Point p) {
-        if (x != p.x) {
-            return ((Integer)x).compareTo(p.x);
-        }
-        return ((Integer)y).compareTo(p.y);
-    }
-
     // 按照先x再y，从小到大的顺序排序
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
-    public static List<Point> sort(List<Point> points) {
-        Collections.sort(points);
-        return points;
-    }
+    public static List<Point> sort(List<Point> points) {}
 
     public static void main(String[] args) throws IOException {
         List<Point> points =
-            Arrays.asList(
-                new Point(2, 0),
-                new Point(-1, 1),
-                new Point(1, -1),
-                new Point(2, 1),
-                new Point(2, -1));
+                Arrays.asList(
+                        new Point(2, 0),
+                        new Point(-1, 1),
+                        new Point(1, -1),
+                        new Point(2, 1),
+                        new Point(2, -1));
         System.out.println(Point.sort(points));
     }
 }
