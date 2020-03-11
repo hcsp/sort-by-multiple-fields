@@ -53,22 +53,7 @@ public class Point {
 
     // 按照先x再y，从小到大的顺序排序
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
-    public static List<Point> sort(List<Point> points) {
-        points.sort((p1, p2) -> {
-            if (p1.x < p2.x) {
-                return -1;
-            } else if (p1.x > p2.x) {
-                return 1;
-            } else if (p1.y < p2.y) {
-                return -1;
-            } else if (p1.y > p2.y) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
-        return points;
-    }
+    public static List<Point> sort(List<Point> points) {}
 
     public static void main(String[] args) throws IOException {
         List<Point> points =
