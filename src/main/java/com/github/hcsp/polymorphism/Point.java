@@ -2,7 +2,6 @@ package com.github.hcsp.polymorphism;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class Point {
@@ -54,32 +53,16 @@ public class Point {
 
     // 按照先x再y，从小到大的顺序排序
     // 例如排序后的结果应该是 (-1, 1) (1, -1) (2, -1) (2, 0) (2, 1)
-    public static List<Point> sort(List<Point> points) {
-        points.sort(new Comparator<Point>() {
-            @Override
-            public int compare(Point o1, Point o2) {
-                long value = o1.x - (long) o2.x;
-                if (value == 0) {
-                    value = o1.y - (long) o2.y;
-                }
-                int result = 0;
-                if (value > 0) {
-                    result = 1;
-                } else if (value < 0){
-                    result = -1;
-                }
-                return result;
-            }
-        });
-        return points;
-    }
+    public static List<Point> sort(List<Point> points) {}
 
     public static void main(String[] args) throws IOException {
         List<Point> points =
                 Arrays.asList(
-                        new Point(-1234567890,1234567890),
-                        new Point(1234567890,-1234567890)
-                );
+                        new Point(2, 0),
+                        new Point(-1, 1),
+                        new Point(1, -1),
+                        new Point(2, 1),
+                        new Point(2, -1));
         System.out.println(Point.sort(points));
     }
 }
