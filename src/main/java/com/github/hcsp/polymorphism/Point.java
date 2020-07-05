@@ -1,7 +1,5 @@
 package com.github.hcsp.polymorphism;
 
-import com.sun.prism.shader.AlphaOne_Color_Loader;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
