@@ -59,13 +59,7 @@ public class Point implements Comparable<Point> {
             return -1;
         } else if (this.x > o.getX()) {
             return 1;
-        } else if (this.y < o.getY()) {
-            return -1;
-        } else if (this.y > o.getY()) {
-            return 1;
-        } else {
-            return 0;
-        }
+        } else return Integer.compare(this.y, o.getY());
     }
 
     // 按照先x再y，从小到大的顺序排序
