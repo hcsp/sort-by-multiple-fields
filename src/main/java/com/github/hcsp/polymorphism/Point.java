@@ -73,8 +73,11 @@ public class Point implements Comparable<Point>{
     @Override
     public int compareTo(Point o) {
            //X相等返回0 相等则使用Y进行排序 否则按照常规排序
-           return this.getX() - o.getX() == 0
-                   ? this.getY() - o.getY()
-                   : this.getX() - o.getX();
+          int keyX = ((Integer) this.getX()).compareTo( ((Integer) o.getX()) );
+          int keyY = ((Integer) this.getY()).compareTo( (Integer) o.getY() );
+          return keyX == 0
+                  ? keyY
+                  : keyX;
+
     }
 }
