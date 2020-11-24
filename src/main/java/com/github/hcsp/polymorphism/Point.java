@@ -75,7 +75,7 @@ public class Point implements Comparable<Point>{
            //X相等返回0 相等则使用Y进行排序 否则按照常规排序
           int keyX = ((Integer) this.getX()).compareTo( ((Integer) o.getX()) );
           int keyY = ((Integer) this.getY()).compareTo( (Integer) o.getY() );
-          return keyX == 0a'd'wa'd'wa
+          return keyX == 0
                   ? keyY
                   : keyX;
 
